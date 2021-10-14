@@ -1,0 +1,38 @@
+@charset "utf-8";
+*{
+    font-family: 'Abril Fatface', cursive;
+}
+body, html{
+    max-width: 1700px;
+    height: 100%;
+}
+/* 모든영역 */
+
+/* header 시작 */
+.header{
+    max-width: 1700px;
+    height: 70px;
+    position: fixed;
+    background-color: white;
+}
+.header > .fixed_top_bar{
+    width: 1200px;
+    height: 70px;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+}
+.header > .fixed_top_bar > .leftMenu{
+    width: 43px;
+    height: 70px;
+    float: left;
+}
+.header > .fixed_top_bar > .rightMail{
+    float: right;
+    width: 50px;
+    height: 70px;
+}
+.centerTitle{
+    margin-top: 15px;
+}
+
