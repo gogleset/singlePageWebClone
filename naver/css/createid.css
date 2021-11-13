@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+.form-horizontal{
+    width: 400px;
+    height: 480px;
+    background-color: rgb(224, 224, 224);
+    margin: 0 auto;
+}
+.form-group{
+    width: 300px;
+    /* background-color: beige; */
+    margin: auto;
+    margin-bottom: 10px;
+}
+.col-md-2{
+    display: block;
+    font-size:10px;
+    
+    padding-top: 5px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+/* .col-md-10{
+    
+} */
+
+.form-control{
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    border-radius:20px;
+    text-align: center;
+}
+
+.option{
+    display: block;
+    width: 207px;
+    margin: auto;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.user_birth::placeholder{
+    text-align: center;
+    font-size: 10px;
+}
+.user_day::placeholder{
+    text-align: center;
+    font-size: 12px;
+}
+.user_email::placeholder{
+    text-align: center;
+    font-size: 10px;
+}
+.user_cellphone::placeholder{
+    text-align: center;
+    font-size:10px;
+}
+
+.text-center{
+    display: block;
+    text-align: center;
+}
+
+.option{
+    text-align: center;
+    font-size: 10px;
+}
+
+.btn{
+    width:80px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    font-size: 10px;
+}
