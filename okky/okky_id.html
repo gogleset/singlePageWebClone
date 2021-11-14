@@ -35,23 +35,25 @@
             </div>
 
             <!-- 이메일 헤더 -->
-            <div class="email_header">
-                <span class="email_header_content">
-                    Enter your email address to be verified
-                </span>
+            <div class="email">
+                <div class="email_header">
+                    <span class="email_header_content">
+                        Enter your email address to be verified
+                    </span>
+                </div>
+                 <!-- 이메일 -->
+                <input type="text" name="form-control_name" id="form-control_id" class="form-control" placeholder="Email address" style="width: 250px">
+                
+                
+                <!-- 체크박스 -->
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="" class="checkbox_class">
+                        I agree to receive emails
+                    </label>
+                </div>
             </div>
-             <!-- 이메일 -->
-            <input type="text" name="form-control_name" id="form-control_id" class="form-control" placeholder="Email address" style="width: 250px">
-            
-            
-            <!-- 체크박스 -->
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="" class="checkbox_class">
-                    I agree to receive emails
-                </label>
-            </div>
-            <hr>
+           
 
             
             <!-- 이름과 닉네임 -->
@@ -85,6 +87,15 @@
 
         <script src="https://code.jquery.com/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="/okky/okky_id.js"></script>
+
+        <script>
+            document.querySelector("#join-form_id").addEventListener("submit", e => {
+
+                const id = new Join();
+
+                
+            })
+        </script>
     </div>
-    
 </html>

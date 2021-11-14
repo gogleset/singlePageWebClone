@@ -30,7 +30,7 @@
     width: 250px;
     height: 70px;
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
 }
 .form-control{
@@ -38,6 +38,11 @@
     margin-bottom: 5px;
     width: 200px;
 
+}
+.email{
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .email_header{
