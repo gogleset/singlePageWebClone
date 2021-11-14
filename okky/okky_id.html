@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/okky_id.css">
+
+
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <!-- Optional theme -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+
+        <form class="join-form" id="join-form_id" name="join-form_name">
+            <div class="header">
+                <span class="header_content">
+                    Please enter your ID and password
+                </span>
+            </div>
+
+            <!-- 아이디 헤더 -->
+            <div class="id_password">
+                <!-- 아이디 -->
+                <input type="text" name="form-control_id" id="form-control_id" class="form-control" placeholder="ID" style="width: 250px">
+                <!--  비밀번호 -->
+                <input type="text" name="form-control_pw" id="form-control_pw" class="form-control " placeholder="Password" style="width: 250px">
+            </div>
+
+            <!-- 이메일 헤더 -->
+            <div class="email_header">
+                <span class="email_header_content">
+                    Enter your email address to be verified
+                </span>
+            </div>
+             <!-- 이메일 -->
+            <input type="text" name="form-control_name" id="form-control_id" class="form-control" placeholder="Email address" style="width: 250px">
+            
+            
+            <!-- 체크박스 -->
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" class="checkbox_class">
+                    I agree to receive emails
+                </label>
+            </div>
+            <hr>
+
+            
+            <!-- 이름과 닉네임 -->
+            <div class="email_header">
+                <span class="email_header_content">
+                    Please enter your name and nickname
+                </span>
+            </div>
+
+            <input type="text" name="form-control_name" id="form-control_id" class="form-control" placeholder="Name" style="width: 250px">
+            <input type="text" name="form-control_name" id="form-control_id" class="form-control" placeholder="Nickname" style="width: 250px">
+            
+            <!-- 버튼 -->
+            <div class="btn_class">
+                
+                <div class="btn_submit2 pull-left">
+                    <button type="reset" class="btn btn-warning btn-xs btn-block">Reset</button>
+                </div>
+                <div class="btn_submit1 pull-left">
+                    <button type="submit" class="btn btn-primary btn-xs btn-block">Join</button>
+                </div>
+                
+            </div>
+            
+            
+        </form>
+        <div class="membership">
+            <span><a href="#">Terms and conditions of membership<br></a></span>
+            <span><a href="#">Personal information handling policy</a></span>
+        </div>
+
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </div>
+    
+</html>
