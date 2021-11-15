@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/reset.css">
 </head>
 <body>
-    
     <form class="form-horizontal" name="join_form" id="join_form">
         <div class="logo">
             <a href="https://www.naver.com" target="_blank">
@@ -25,14 +24,14 @@
         </div>
 
         <div class="form-group">
-            <label for="user_id" class="col-md-2">비밀번호</label>
+            <label for="user_pw" class="col-md-2">비밀번호</label>
             <div class="col-md-10">
                 <input type="password" name="user_pw" id="user_pw" class="form-control" />
             </div>
         </div>
 
         <div class="form-group">
-            <label for="user_id" class="col-md-2">비밀번호 재확인</label>
+            <label for="user_pw_re" class="col-md-2">비밀번호 재확인</label>
             <div class="col-md-10">
                 <input type="password" name="user_pw_re" id="user_pw_re" class="form-control" />
             </div>
@@ -51,7 +50,7 @@
                 
                     <input type="text" name="user_birth" id="user_birth" class="user_birth pull-left"placeholder="년(4자)"/>
                     <!-- form태그의 제목 -->
-                    <select name="month" id="month" class="option user_birth_option pull-left" style="height: 22px;">
+                    <select name="month" id="month" class="option user_birth_option pull-left" style="height: 39px;">
                         <option value=""> 월 </option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -101,7 +100,7 @@
         
         <div class="form-group">
             <label for="user_cellphone" class="col-md-2">휴대전화</label>
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom: 10px;">
                 <select name="countryCode" id="countryCode" class="option">
                     <option data-countryCode="KR" value="82"Selected>대한민국 (+82)</option>
                     <option data-countryCode="GB" value="44">영국 (+44)</option>
@@ -327,6 +326,7 @@
             <div class="form-group cellphone_group">
                 <input type="text" name="user_cellphone" id="user_cellphone" class="form-control user_cellphone pull-left" placeholder="전화번호 입력"/>
                 <input type="button" name="user_cellphone_button" id="user_cellphone_button" class=" user_cellphone_button" value="인증번호 받기"/>
+                <input type="text" name="user_cellphone_output" id="user_cellphone_output" class="form-control user_cellphone_output" placeholder="인증번호 입력하세요"/>
             </div>
         </div> 
 
@@ -335,7 +335,6 @@
             <div class="form-group">
                 <div class="text-center">
                     <button type="submit" class="btn">가입하기</button>
-                    <button type="reset" class="btn">다시작성</button>
                 </div>
             </div>
         </div>
@@ -353,6 +352,7 @@
 
                 //아이디
                 if(!c.value("#user_id", "아이디를 입력해주세요")){return false}
+                if(!c.eng_number("#user_id", "영어와 숫자 조합으로만 입력해주세요")){return false}
 
                 //비밀번호
                 if(!c.value("#user_pw", "비밀번호를 입력해주세요")){return false}
@@ -363,11 +363,14 @@
 
                 // 이름
                 if(!c.value("#user_name", "이름을 입력해주세요")){return false}
-
+                if(!c.kor("#user_name", "한글로 입력해주세요")){return false}
                 // 생년
                 if(!c.value("#user_birth", "태어난 년도를 입력해주세요")){return false}
                 if(!c.birth("#user_birth")) {return false}
                 if(!c.num("#user_birth", "숫자가 아닙니다")) {return false}
+
+                //월
+                if(!c.value("#month", "태어난 월을 입력해주세요")){return false}
 
                 // 일
                 if(!c.value("#user_day", "태어난 날짜를 입력해주세요")) {return false}
@@ -375,8 +378,13 @@
                 if(!c.day("#user_day")) {return false}
 
                 // 이메일
-                if(!c.value("#user_email", "이메일 주소를 입력해주세요")) {return false}
-                if(!c.email("#user_email", "이메일 형식에 맞지 않습니다")) {return false}
+                if(c.value("#user_email")){
+                    c.email("#user_email", "이메일 형식이 아닙니다.")
+                    return false
+                }
+
+                //성별
+                if(!c.value("#gender", "성별을 입력해주세요")) {return false}
                 
                 // 핸드폰
                 if(!c.value("#user_cellphone", "핸드폰 번호를 입력해주세요")) {return false}

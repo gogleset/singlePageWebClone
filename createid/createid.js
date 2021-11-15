@@ -44,9 +44,9 @@ class Createid{
 
         if(or != ch){
             alert(msg);
-            or = '';
-            ch = '';
-            or.focus();
+            ori.value = '';
+            check.value = '';
+            ori.focus();
             return false
         }
         return true;
@@ -109,6 +109,35 @@ class Createid{
         return true;
     }
     /**
+     * 입력값이 이메일 정규표현식을 충족하는지 검사한다.
+     * @param {string} selector    입력 요소에 해당하는 css 선택자
+     * @param {string} msg         표시할 메시지
+     * @param {object} regex_expr  검사할 정규 표현식
+     * @return {boolean}   표현식을 충족할 경우 true / 그렇지 않은 경우 false
+     */
+    email(selector, msg) {
+        const field = document.querySelector(selector);
+        const regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+        // field에서 받아들어온 selector가 받아들여지고
+        let src = field.value.trim();
+        // selector에서 받아들어온 value를 잘라서 가공
+        console.log(!src);
+        console.log(msg);
+
+        if(!src || !regex.test(src)) {
+            // !src는 false
+            // src가 정규표현식이 맞다면 앞의 부정문을 만나 false
+            // false || false니까 false리턴 그러니까 실행안됨
+            // test는 정규표현식이 맞는지 판단
+            alert(msg);
+            field.value="";
+            field.focus();
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * 입력값이 정규 표현식을 충족하는지 검사한다.
      * @param {string} selector    입력 요소에 해당하는 css 선택자
      * @param {string} msg         표시할 메시지
@@ -149,12 +178,14 @@ class Createid{
         return this.field(selector, msg, /^[0-9]*$/);
     }
 
-
-    email(selector, msg){
-        return this.field(selector, msg, /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i);
-    }
-
     cellphone(selector, msg) {
         return this.field(selector, msg, /^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/);
+    }
+
+    kor(selector, msg) {
+        return this.field(selector, msg, /^[ㄱ-ㅎ가-힣]*$/);
+    }
+    eng_number(selector, msg) {
+        return this.field(selector, msg, /^[a-zA-Z0-9]*$/);
     }
 }
