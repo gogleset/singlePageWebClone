@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 .form-horizontal{
-    width: 400px;
-    height: 480px;
-    background-color: rgb(224, 224, 224);
+    width: 100%;
+    height: 100%;
+    background-color: rgb(245, 246, 247);
     margin: 0 auto;
+    padding-top: 10px;
 }
 .form-group{
     width: 300px;
@@ -18,19 +19,46 @@
     
     padding-top: 5px;
     margin-bottom: 4px;
-    text-align: center;
+    text-indent: 50px;
+
+    font-weight: bold;
 }
-/* .col-md-10{
+
+.logo{
+    width: 200px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom:10px;
     
-} */
+}
+
+.logo a{
+    display: block;
+    
+    width: 200px;
+    height: 40px;
+    border: none;
+    
+}
+.logo-img{
+    width: 180px;
+    height: 40px;
+    margin: 0 auto;
+    background-image: url('/createid/2.png');
+    background-size: cover;
+    border: none;
+}
+
+
+
 
 .form-control{
     display: block;
     width: 200px;
     margin: 0 auto;
     border: 1px solid #fff;
-    border-radius:20px;
-    text-align: center;
+   
+    text-align: left;
 }
 
 .option{
@@ -38,23 +66,48 @@
     width: 207px;
     margin: auto;
     border: 1px solid #fff;
-    border-radius: 20px;
+
+}
+
+.birthday{
+    display: block;
+
+    width: 205px;
+    margin: 0 auto;
+}
+
+.user_birth{
+    width: 25%;
+    height: 18px;
+    margin-right: 5px;
+    border: 1px solid #fff;
+}
+.user_birth1{
+    text-indent: 3px;
+}
+.user_birth_option{
+    width: 40%;
+    height: 22px;
+    margin-right: 5px;
+}
+.user_day{
+    width: 16%;
+    height: 18px;
+    margin: 0px;
 }
 
 .user_birth::placeholder{
-    text-align: center;
+    text-align: left;
     font-size: 10px;
 }
 .user_day::placeholder{
-    text-align: center;
-    font-size: 12px;
+    text-align: left;
+    font-size: 10px;
 }
 .user_email::placeholder{
-    text-align: center;
     font-size: 10px;
 }
 .user_cellphone::placeholder{
-    text-align: center;
     font-size:10px;
 }
 
@@ -64,8 +117,19 @@
 }
 
 .option{
-    text-align: center;
+    text-align: left;
     font-size: 10px;
+    height: 20px;
+}
+.cellphone_group{
+    width: 204px;
+    height: 60px;
+    background-color: rgb(108, 70, 70);
+}
+.user_cellphone{
+    width:60%;
+    height:18px;
+    margin-right: 10px;
 }
 
 .btn{

@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/createid.css">
+    <link rel="stylesheet" href="/createid/css/createid.css">
     <link rel="stylesheet" href="css/reset.css">
 </head>
 <body>
+    
     <form class="form-horizontal" name="join_form" id="join_form">
+        <div class="logo">
+            <a href="https://www.naver.com" target="_blank">
+                <div class="logo-img"></div>
+            </a>
+        </div>
         <div class="form-group">
             <label for="user_id" class="col-md-2">아이디</label>
             <div class="col-md-10">
@@ -40,44 +46,39 @@
         </div> 
  
          <div class="form-group">
-            <label for="user_birth" class="col-md-2">생년월일</label>
-            <div class="col-md-10">
-                <input type="text" name="user_birth" id="user_birth" class="form-control  user_birth" placeholder="년(4자)"/>
-            </div>
-            <div class="col-md-10">
-                <!-- form태그의 제목 -->
-               <select name="month" id="month" class="option" style="margin-top: 10px">
-                   <option value=""> 월 </option>
-                   <option value="1">1</option>
-                   <option value="2">2</option>
-                   <option value="3">3</option>
-                   <option value="4">4</option>
-                   <option value="5">5</option>
-                   <option value="6">6</option>
-                   <option value="7">7</option>
-                   <option value="8">8</option>
-                   <option value="9">9</option>
-                   <option value="10">10</option>
-                   <option value="11">11</option>
-                   <option value="12">12</option>
-               </select>
-            </div>
-        </div> 
+             <div class="birthday">
+                <label for="user_birth" class="col-md-2 user_birth1">생년월일</label>
+                
+                    <input type="text" name="user_birth" id="user_birth" class="user_birth pull-left"placeholder="년(4자)"/>
+                    <!-- form태그의 제목 -->
+                    <select name="month" id="month" class="option user_birth_option pull-left" style="height: 22px;">
+                        <option value=""> 월 </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+            
+            </div> 
+    
+            <div class="form-group">
+                    <input type="text" name="user_day" id="user_day" class="form-control user_day" placeholder="일"/>
+            </div> 
+        </div>
+            
 
         <div class="form-group">
-            <div class="col-md-10">
-                <input type="text" name="user_day" id="user_day" class="form-control user_day" placeholder="일"/>
-            </div>
-        </div> 
-
-        <div class="form-group">
-            <label for="user_email" class="col-md-2">이메일</label>
-            <div class="col-md-10">
-                <input type="text" name="user_email" id="user_email" class="form-control user_email" placeholder="본인확인 이메일"/>
-            </div>
-        </div> 
-
-        <div class="form-group">
+            <label for="gender" class="col-md-2">
+                성별
+            </label>
             <!-- form태그의 제목 -->
               <select name="gender" id="gender" class="option">
                 <option value=""> 성별 </option>
@@ -87,10 +88,19 @@
             </select>
         </div>
 
+        <div class="form-group">
+            <label for="user_email" class="col-md-2">본인 확인 이메일(선택)</label>
+            <div class="col-md-10">
+                <input type="text" name="user_email" id="user_email" class="form-control user_email" placeholder="선택입력"/>
+            </div>
+        </div> 
+
+        
+
         <!-- 국제전화 번호 -->
         
         <div class="form-group">
-            <label for="user_cellphone" class="col-md-2">전화번호</label>
+            <label for="user_cellphone" class="col-md-2">휴대전화</label>
             <div class="form-group">
                 <select name="countryCode" id="countryCode" class="option">
                     <option data-countryCode="KR" value="82"Selected>대한민국 (+82)</option>
@@ -314,8 +324,9 @@
                 </select>
             </div>
 
-            <div class="form-group col-md-10">
-                <input type="text" name="user_cellphone" id="user_cellphone" class="form-control user_cellphone" placeholder="핸드폰 번호를 입력하세요"/>
+            <div class="form-group cellphone_group">
+                <input type="text" name="user_cellphone" id="user_cellphone" class="form-control user_cellphone pull-left" placeholder="전화번호 입력"/>
+                <input type="button" name="user_cellphone_button" id="user_cellphone_button" class=" user_cellphone_button" value="인증번호 받기"/>
             </div>
         </div> 
 
@@ -332,7 +343,7 @@
     </form>
 
 
-        <script src="/naver/createid.js"></script>
+        <script src="/createid/createid.js"></script>
         <script>
             document.querySelector("#join_form").addEventListener("submit", e => {
                 e.preventDefault();
