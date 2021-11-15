@@ -84,15 +84,36 @@ class Createid{
 
     /**
      * 태어난 날이 맞는지를 검사한다.
-     * @param {string} selector 입력요소에 해당하는 css 선택자
+     * @param {string} day 날에 해당하는 css 선택자
+     * @param {string} year 년에 해당하는 css 선택자
+     * @param {string} month 달에 해당하는 css 선택자
      * @param {boolean} 입력된 경우 true / 입력되지 않은 경우 false
      */
-    day(selector){
-        const slec = document.querySelector(selector);
+    day(day, year, month){
+        const slec = document.querySelector(day);
+        // 일을 가져온다
+        const mon = document.querySelector(month).value;
+        // 달을 가져온다
+        const yea = document.querySelector(year);
+        // 년도를 가져온다
         let msg = "";
-
+        // 메세지창
         let sl = slec.value.trim();
-        if(sl.length > 2){
+        let ye = yea.value.trim();
+        // 띄어쓰기 잘라주기
+
+        let mo = Number(mon);
+        let y = Number(ye);
+        
+        
+        let lastdate = new Date(y, mo, 0)
+        // 해당하는 연도와 달의 마지막 날을 할당
+        console.log(y);
+        console.log(mo);
+        console.log(lastdate.getDate());
+
+
+        if(sl.length > 2 || Number(sl) > Number(lastdate.getDate())){
             msg = "날짜를 확인하세요"
             alert(msg);
             slec.value = "";
