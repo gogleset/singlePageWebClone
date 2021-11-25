@@ -1,1 +1,26 @@
 @charset "utf-8";
+
+.content1{
+    max-width: 2560px;
+    height: 720px;
+    background-color: aqua;
+}
+.picture{
+    display: block;
+    width: 100%;
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.picture1{
+    background-image: url(../img/20211103459527.jpg);
+
+}
+
+.picture2{
+    background-image: url(../img/20211108221041.jpg);
+}
+
+.picture3{
+    background-image: url(../img/20210831576147.jpg)
+}

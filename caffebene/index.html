@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- swiper cdn-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <!-- 참조파일 -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -15,6 +18,10 @@
     <link rel="stylesheet" href="./css/content2.css">
     <link rel="stylesheet" href="./css/content3.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+
+
+
 </head>
 
 <body>
@@ -67,14 +74,45 @@
 
 
         <!-- content1 -->
-        <section class="content1">
-
+        <section class="content1 swiper mySwiper div-center">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a class="picture picture1" href="#"></a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="picture picture2" href="#"></a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="picture picture3" href="#"></a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </section>
 
 
         <!-- content2 -->
-        <section class="content2">
+        <section class="content2 max-width div-center">
+            <h3>Contents</h3>
+            <div class="content_left">
+                <ul class="grid">
+                    <li class="grid_item">
+                        <a href="#">
+                            <div class="grid_item_img">
+                                <img src="./img/20211117174322.jpg" alt="">
+                            </div>
+                            <div class="grid_item_txt">
+                                <p class="cate">메뉴</p>
+                                <p class="subtitle">
+                                    바스크치즈케이크
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content_right">
 
+            </div>
         </section>
 
 
@@ -89,8 +127,8 @@
             <!-- footer_top -->
             <div class="footer_top">
                 <div class="inner_footer_top max-width div-center">
-                    <div class="static">
-                        <ul>
+                    <div class="static clearfix">
+                        <ul class="pull-left">
                             <li class="static_list1">
                                 <a href="#">오시는 길</a>
                             </li>
@@ -104,23 +142,71 @@
                                 <a href="#">이용약관</a>
                             </li>
                             <li class="static_list5">
-                                <p>고객센터 1688-4666</p>
+                                <span>고객센터 1688-4666</span>
                             </li>
                         </ul>
+
+                        <!-- btn-top -->
+                        <button type="button" class="btn-top pull-right">Top</button>
                     </div>
                 </div>
             </div>
 
             <!-- footer_btm -->
-            <div class="footer_btm">
-                <div class="inner_footer_btm">
+            <div class="footer_btm clearfix">
+                <!-- inner_footer -->
+                <div class="inner_footer_btm max-width div-center">
+                    <!-- footer_btm -->
+                    <div class="footer_btm_info pull-left">
+                        <!-- footer_info -->
+                        <div class="footer_info">
+                            <address>서울시 성동구 상원1길 25</address>
+                            <span class="tt">대표이사</span>
+                            <span class="ts">박그레타</span>
+                            <br>
+                            <span class="tt">사업자등록번호</span>
+                            <span class="ts">206-86-29161</span>
+                            <span>benecs@caffebene.co.kr</span>
+                        </div>
+                        <!-- copyright -->
+                        <p class="copy">
+                            Copyright&copy; by Caffebene, All rights reserved.
+                        </p>
+                    </div>
+                    <!-- footer_sns -->
+                    <div class="footer_btm_sns pull-right">
+                        <!-- icons -->
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- end -->
     </div>
-
-    <script></script>
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // swiper
+        let swiper = new Swiper(".mySwiper", {
+            spaceBetween: 0,
+            centeredSlides: true,
+            // transition speed
+            speed: 1500,
+            // loop
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            }
+        });
+    </script>
 </body>
 
 </html>

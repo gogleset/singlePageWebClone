@@ -3,21 +3,165 @@
 .footer{
     width: 100%;
     height: 211px;
-    background-color: beige;
+    /* background-color: beige; */
 }
 /* footer top */
 .footer_top{
     width: 100%;
     height: 43.797px;
-    background-color: black;
+    /* background-color: black; */
+    border-bottom: 3px solid rgb(58, 70, 106);
 }
 .inner_footer_top{
     height: 100%;
-    background-color: rgb(79, 138, 189);
+    /* background-color: rgb(79, 138, 189); */
 }
 .static{
     width: 100%;
     height: 16.797px;
     padding-bottom: 27px;
-    background-color: rgb(94, 191, 191) ;
+    /* background-color: rgb(94, 191, 191) ; */
+}
+.static ul{
+    display:block;
+    width: 1163px;
+    height: 16.8px;
+    /* background-color: blanchedalmond; */
+}
+/* 리스트 공통 */
+.static li{
+    float: left;
+    height: 100%;
+    margin-right: 30px;
+    /* background-color: aquamarine; */
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:0.015em;
+    text-align: center;
+}
+
+.static_list1{
+    width: 54.7px;
+}
+
+.static_list2{
+    width: 51.53px;
+}
+.static_list3{
+    width: 103.05px;
+}
+.static_list4{
+    width: 51.53px;
+}
+.static_list5{
+    width: 125.86px;
+}
+
+.static a {
+    color: rgb(58, 70, 106);
+}
+.static span{
+    color: rgb(0, 166, 177);
+}
+
+/* btn-top */
+.btn-top{
+    display: block;
+    width: 27px;
+    height: 15px;
+    background: url(../img/ico-arr-top.png) no-repeat 50% 50%;
+    border: 0;
+    font-size: 0;
+    cursor: pointer;
+}
+
+/* border-btm */
+.footer_btm{
+    width: 100%;
+    height: 167.17px;
+}
+
+.inner_footer_btm{
+    height: 89.172px;
+    padding-top:25px;
+    padding-bottom:50px;
+    /* background-color: beige; */
+}
+.footer_btm_info{
+    padding-left: 180px;
+    width: 322.750px;
+    height:89.172px;
+    background-image: url(../img/footer-logo.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.footer_info{
+    width: 322.75px;
+    height:44.78px;
+    /* background-color: antiquewhite; */
+    
+}
+
+.footer_info address{
+    display: inline-block;
+    width: 127.406px;
+    height: 14.391px;
+    font-size:12px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 4px 20px 4px 0px;
+}
+.footer_info span:last-child{
+    display: inline-block;
+    margin: 4px 0px;
+}
+
+.tt{
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 6px 4px 0px;
+}
+.ts{
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 16px 4px 0px;
+}
+
+.copy{
+    display: inline-block;
+    width: 322.750px;
+    height:14.391px;
+    margin-top: 30px;
+    font-size: 12px;
+    color: rgb(184, 184, 184);
+    font-stretch: 100%;
+}
+
+.footer_btm_sns{
+    display: block;
+    width: 157.422px;
+    height:30px;
+    /* background-color:violet; */
+}
+.footer_btm_sns a{
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    /* background-color: antiquewhite; */
+    margin:0px 4px;
+}
+
+.footer_btm_sns a:first-child{
+    background-image: url(../img/ico-fb.png);
+}
+.footer_btm_sns a:nth-child(2){
+    background-image: url(../img/ico-insta.png);
+}
+.footer_btm_sns a:nth-child(3){
+    background-image: url(../img/ico-youtub.png);
+}
+.footer_btm_sns a:last-child{
+    background-image: url(../img/ico-app.png);
 }
