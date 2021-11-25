@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 123px;
+    /* background-color: aliceblue; */
+}
+.inner_header{
+    height: 100%;
+    /* background-color: black; */
+}
+
+/* logo */
+.logo{
+    display: inline-block;
+    width: 132px;
+    height:63.99px;
+    /* background-color:aquamarine; */
+    margin-top:30px;
+}
+.logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -10000px;
+}
+
+/* nav list */
+.gnb{
+    width: 810px;
+    height: 18px;
+    margin: 63px 0px 42px 57px;
+    /* background-color: aliceblue; */
+}
+.gnb ul{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* gnb의 리스트 */
+.gnb li{
+    display: block;
+    float: left;
+    height: 100%;
+}
+/* gnb안에 있는 모든 글꼴 */
+.gnb a{
+    display: block;
+    height: 100%;
+    padding: 0px 29px;
+    line-height:19px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Roboto;
+    cursor: pointer;
+}
+
+/* 개별요소 */
+.gnb_list1{
+    width: 152px;
+}
+.gnb_list1 a{
+    width: 94px;
+    /* background-color: aqua; */
+}
+.gnb_list2{
+    width: 112px;
+    /* background-color: beige; */
+}
+.gnb_list2 a{
+    width: 54px;
+    /* background-color: rgb(85, 76, 76); */
+}
+.gnb_list3{
+    width: 110px;
+    /* background-color: blue; */
+}
+.gnb_list3 a{
+    width: 52px;
+    /* background-color: blue; */
+}
+.gnb_list4{
+    width: 172px;
+    /* background-color: blue; */
+}
+.gnb_list4 a{
+    width: 114px;
+    /* background-color: rgb(77, 77, 108); */
+}
+
+.gnb_list5{
+    width: 122px;
+    /* background-color: blue; */
+}
+.gnb_list5 a{
+    width: 64px;
+    /* background-color: rgb(54, 54, 131); */
+}
+.gnb_list6{
+    width: 142px;
+    /* background-color: blue; */
+}
+.gnb_list6 a{
+    width: 84px;
+    /* background-color: rgb(77, 77, 108); */
+}
+
+/* 가맹문의 버튼 */
+.info_btn{
+    display: inline-block;
+    width: 133px;
+    height:16.797px;
+    padding: 8px 0px 9px 0px;
+    margin-top:55px;
+    background-color: rgb(0, 165, 177);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    text-align: center;
+    text-decoration: none;
+    line-height: 19px;
+    font-size: 14px;
+    letter-spacing:0.5px;
+    color: rgb(255, 255, 255);
+}
+
+/* 언어 버튼입니다 */
+.lang{
+    position: absolute;
+    top: 25px;
+    right: 115px;
+    bottom:81.203px;
+    width: 56.984px;
+    height: 16.797px;
+    /* background-color: black; */
+    padding:0;
+}
+.kr{
+    display:inline-block;
+    width: 15.828px;
+    height: 14.391px;
+    padding: 0px 4px 0px 6px;
+    /* background-color: aqua; */
+    text-decoration: none;
+    line-height: 18.391px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+.en{
+    display:inline-block;
+    width: 16.016px;
+    height: 14.391px;
+    border-left: 1px solid rgb(194, 194, 194);
+    padding: 0px 5px 0px 6px;
+    /* background-color: aqua; */
+    text-decoration: none;
+    line-height: 18.391px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(169, 169, 169);
+}
+
+
+
+
+
