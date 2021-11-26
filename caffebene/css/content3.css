@@ -1,8 +1,175 @@
 @charset "utf-8";
 
 .content3{
+    
     width: 100%;
     height: 1530px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     margin-bottom: 80px;
+    
+}
+
+ .inner_content3{
+    position: relative;
+    height: 100%;
+    background-color: aliceblue;
+} 
+  
+.inner_content3 h3{
+    display: block;
+    width: 600px;
+    height: 242px;
+}
+/* range1 */
+.range1{
+    position: absolute;
+    width: 590px;
+    height: 618px;
+    left: 600px;
+    right: 0;
+    top: 0;
+}
+
+/* range2 */
+.range2{
+    width: 600px;
+    height: 476px;
+    /* background-color: aqua; */
+}
+.inner_range{
+    display: block;
+    width:300px;
+    height:100%;
+    text-align: center;
+}
+.range_banner{
+    margin-top: 109px;
+}
+.inner_range p{
+    display: block;
+    padding-top:29px;
+    width: 300px;
+    height: 80.1px;
+    letter-spacing: -1px;
+    line-height:22px;
+    font-size:14px;
+    font-weight:500;
+}
+
+/* range3 */
+.range3{
+
+    width: 600px;
+    height:812px;
+}
+
+/* range4 */
+
+.range4{
+    width: 330px;
+    height: 710px;
+    position: absolute;
+    top: 618px;
+    left: 600px;
+}
+.range4 img{
+    width: 100%;
+    height: 100%;
+}
+.range5{
+    position: absolute;
+    top: 618px;
+    right: 0;
+    width: 260px;
+    height: 476px;
+}
+.range5 img{
+    width: 100%;
+    height: 100%;
+}
+
+.range6{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 260px;
+    height: 436px;
+    background: #838dab;
+}
+.shop_title{
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0;
+}
+.btn-cross{
+    position: absolute;
+    left: 40px;
+    bottom: 31px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+}
+/* 십자가 모양 만들기 */
+.btn-cross:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    margin-top: -1px;
+    background: #ffffff;
+}
+.btn-cross:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7%;
+    left: 46%;
+    width: 2px;
+    height: 24px;
+    margin-top: -1px;
+    background: #ffffff;
+}
+
+/* range7 */
+.range7{
+    position: absolute;
+    right: 260px;
+    bottom: 0;
+    width: 404px;
+    height: 202px;
+    background: #d5bbb4;
+}
+.range7 img{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.news_title{
+    bottom: 120px;
+}
+.news_cross{
+    bottom: 60px;
+}
+
+.range8{
+    position: absolute;
+    left: 123px;
+    bottom: 0;
+    width: 404px;
+    height: 202px;
+    background: #d2c7c3;
+}
+.range8 img{
+    position: absolute;
+    top: 0;
+    right: 0;
 }

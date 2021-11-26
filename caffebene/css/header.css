@@ -5,7 +5,8 @@
     position: relative;
     width: 100%;
     height: 123px;
-    /* background-color: aliceblue; */
+    background-color: rgb(252, 252, 252);
+    z-index: 9999;
 }
 .inner_header{
     height: 100%;
@@ -49,7 +50,7 @@
     height: 100%;
 }
 /* gnb안에 있는 모든 글꼴 */
-.gnb a{
+.gnb_a{
     display: block;
     height: 100%;
     padding: 0px 29px;
@@ -101,7 +102,7 @@
     width: 122px;
     /* background-color: blue; */
 }
-.gnb_list5 a{
+.gnb_list5 > a{
     width: 64px;
     /* background-color: rgb(54, 54, 131); */
 }
@@ -139,7 +140,7 @@
 .lang{
     position: absolute;
     top: 25px;
-    right: 115px;
+    right: 225px;
     bottom:81.203px;
     width: 56.984px;
     height: 16.797px;
@@ -150,10 +151,10 @@
     display:inline-block;
     width: 15.828px;
     height: 14.391px;
-    padding: 0px 4px 0px 6px;
+    padding: 0px 7px 0px 6px;
     /* background-color: aqua; */
     text-decoration: none;
-    line-height: 18.391px;
+    line-height: 14.5px;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
@@ -163,17 +164,71 @@
     width: 16.016px;
     height: 14.391px;
     border-left: 1px solid rgb(194, 194, 194);
-    padding: 0px 5px 0px 6px;
+    padding: 0px 0px 0px 6px;
     /* background-color: aqua; */
     text-decoration: none;
-    line-height: 18.391px;
+    line-height: 14.5px;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
     color: rgb(169, 169, 169);
 }
 
+.depth_list{
+    display: none;
+    position: relative;
+    width: 150px;
+    height: 240px;
+    padding-top: 60px;
+    /* background-color: aqua; */
+    z-index: 500;
+    text-align: center;
+}
+.depth_inner_list_a{
+    display: none;
+    height: 32.8px;
+    /* background-color: aliceblue; */
+    padding: 2px 29px;
+}
 
+.depth_inner_list{
+    /* display:none; */
+    width: 100%;
+    height: 32.8px;
+    padding: 8px 0px;
+    font-size: 14px;
+    font-family: Roboto;
+}
+.depth_inner_global{
+    display:none;
+    text-align: center;
+    width: 100%;
+    height: 33px;
+    /* background-color: aliceblue; */
+}
+.depth_inner_global3{
+    width: 130px;
+} 
+/* 안보이는 배경화면 */
+.depth{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 250px;
+    z-index:100;
+    top: 0;
+    left: 0;
+    background-color: rgb(231, 231, 231);
+    margin-top: 123px;
+    opacity: 0.9;
+}
+/* 디스플레이의 속성을 변환합니다 */
+.on{
+    display: block;
+}
+.fix{
+    position: fixed;
+}
 
 
 
