@@ -5,26 +5,147 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
     <title>Document</title>
 
 </head>
 
 <body>
     <!-- 카카오 맵을 표시할 박스 -->
-    <div id="map" style="width:500px;height:400px;"></div>
+    <div id="map" style="width:1200px;height:600px;"></div>
 
     <!-- ajax 통신객체 모듈화(Promise) -->
     <script src="./ajaxHelper.js"></script>
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f5b489213a97ff2e201e530fc7bfc857"></script>
     <script>
-        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-        var options = { //지도를 생성할 때 필요한 기본 옵션
-            center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-            level: 3 //지도의 레벨(확대, 축소 정도)
-        };
+        // 오늘 날짜가 담길 변수
+        let todayString = "";
 
-        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+
+        // 위치정보 성공시 수행될 콜백
+        const success = (position) => {
+
+            // Ajax통신 성공시 
+            ajaxPromiseHelper("http://openapi.seoul.go.kr:8088/4768664573676f6f38366a58517357/json/DailyAverageCityAir/1/25/" + todayString).then(json => {
+                console.log(json);
+            }).catch(e => {
+                console.log(e);
+                alert(e);
+            });
+
+
+
+            const latitude = position.coords.latitude; //위도
+            const longitude = position.coords.longitude; //경도
+            let center_latitude = null;
+            let center_longitude = null;
+
+            var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+            var options = { //지도를 생성할 때 필요한 기본 옵션
+                center: new kakao.maps.LatLng(latitude, longitude), //지도의 중심좌표.
+                level: 8 //지도의 레벨(확대, 축소 정도)
+            };
+
+            // 마우스 드래그로 지도 이동이 완료되었을 때 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+
+
+            var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+            // 드레그 이벤트 입니다.
+            kakao.maps.event.addListener(map, 'dragend', function () {
+
+                // 지도 중심좌표를 얻어옵니다 
+                var latlng = map.getCenter();
+
+                // 지도의 중심좌표입니다.
+                center_latitude = latlng.getLat();
+                center_longitude = latlng.getLng();
+                
+                var positions = [
+                    {
+                        title: '현재위치',
+                        latlng: new kakao.maps.LatLng(latitude, longitude)
+                    },
+                    {
+                        title: '움직이는 곳의 가운데 점',
+                        latlng: new kakao.maps.LatLng(center_latitude, center_longitude)
+                    },
+                    
+                ];
+                var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+                for (var i = 0; i < positions.length; i++) {
+
+                    // 마커 이미지의 이미지 크기 입니다
+                    var imageSize = new kakao.maps.Size(24, 35);
+
+                    // 마커 이미지를 생성합니다    
+                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+                    // 마커를 생성합니다
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        position: positions[i].latlng, // 마커를 표시할 위치
+                        title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                        image: markerImage // 마커 이미지 
+                    });
+                }
+
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+
+            });
+
+
+
+
+
+        }
+
+        // 실패시 수행될 콜백
+        function error(message) {
+            alert('위치 정보 획득에 실패했습니다.');
+            console.error(message);
+        }
+
+        const option = {
+            enableHighAccuracy: true, //높은 정확도 사용하기
+            maximumAge: 0, //캐시에 저장한 위치정보를 대신 반환할 수 있는 최대 시간을 밀리초로 나타내는 양
+            //  -> 0으로 설정할 경우 캐시를 사용하지 않고 매번 gps값을 새롭게 취득함.
+            timeout: 30000,//제한시간 (30초), 제한시간 안에 조회가 성공하지 않으면 에러로 간주
+        }
+
+        // 현재 위치를 1회성으로 조회함.
+        // success -> 위치정보 조회 성공시 호출될 콜백함수
+        // error -> 위치정보 조회 실패시 호출될 콜백함수
+        // options -> 조회 옵션 (선택사항)
+        navigator.geolocation.getCurrentPosition(success, error, option);
+
+
+
+        // 오늘 날짜 조회
+        // 날짜 불러오는 거
+        let today = new Date();
+
+        let year = today.getFullYear();
+        let month = today.getMonth() + 1;
+        let date = today.getDate();
+
+
+
+        if (month < 10) {
+            todayString = "" + year + "0" + month;
+        } else {
+            todayString = "" + year + month;
+        }
+        if (date < 10) {
+            todayString += "0" + date;
+        } else {
+            todayString += date;
+        }
+        console.log(todayString);
     </script>
 </body>
 
