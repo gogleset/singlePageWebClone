@@ -142,8 +142,8 @@ class Createid{
         // field에서 받아들어온 selector가 받아들여지고
         let src = field.value.trim();
         // selector에서 받아들어온 value를 잘라서 가공
-        console.log(!src);
-        console.log(msg);
+        // console.log(!src);
+        // console.log(msg);
 
         if(!src || !regex.test(src)) {
             // !src는 false
